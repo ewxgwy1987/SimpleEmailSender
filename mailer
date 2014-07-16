@@ -1,0 +1,7 @@
+<NotepadPlus>
+    <Project name="mailer">
+        <File name="EmailAddresses.txt" />
+        <File name="mailer.py" />
+        <File name="message.txt" />
+    </Project>
+</NotepadPlus>

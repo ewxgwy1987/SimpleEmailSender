@@ -1,0 +1,28 @@
+<?xml version="1.0"?>
+<EmailSenderConfig>
+  <LogFileName>EmailSender.log</LogFileName>
+  
+  <PathFileMSG>message.txt</PathFileMSG>
+
+  <EmailConfig>
+    <EmailFrom>ewxgwy1987@163.com</EmailFrom>
+
+    <EmailToList>
+      <EmailTo>wenyu.guo@pterisglobal.com</EmailTo>
+      <EmailTo>ewxgwy1987@gmail.com</EmailTo>
+      <EmailTo>ewxgwy198721@163.com</EmailTo>
+      <EmailTo>testewxgwy2@163.com</EmailTo>
+    </EmailToList>
+
+    <EmailSubject_Default>Test SVN Email</EmailSubject_Default>
+  </EmailConfig>
+
+  <SMTPServer>
+	<ServerName>smtp.163.com</ServerName>
+    <ServerUser>ewxgwy1987</ServerUser>
+    <ServerPassword>21-ewxgwy</ServerPassword>
+    <EmailPort>25</EmailPort>
+    <EnableSSL>False</EnableSSL>
+  </SMTPServer>
+  
+</EmailSenderConfig>

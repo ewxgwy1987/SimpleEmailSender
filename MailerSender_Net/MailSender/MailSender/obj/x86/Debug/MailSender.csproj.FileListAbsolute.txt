@@ -1,0 +1,4 @@
+D:\Python Learning\Email_Python\MailerSender_Net\MailSender\MailSender\bin\Debug\MailSender.exe
+D:\Python Learning\Email_Python\MailerSender_Net\MailSender\MailSender\bin\Debug\MailSender.pdb
+D:\Python Learning\Email_Python\MailerSender_Net\MailSender\MailSender\obj\x86\Debug\MailSender.exe
+D:\Python Learning\Email_Python\MailerSender_Net\MailSender\MailSender\obj\x86\Debug\MailSender.pdb

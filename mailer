@@ -1,7 +1,10 @@
 <NotepadPlus>
     <Project name="mailer">
-        <File name="EmailAddresses.txt" />
-        <File name="mailer.py" />
+        <File name="EmailSender.py" />
+        <File name="EmailSenderConfig.xml" />
+        <File name="EmailXConfig.py" />
+        <File name="mailer" />
         <File name="message.txt" />
+        <File name="test.bat" />
     </Project>
 </NotepadPlus>

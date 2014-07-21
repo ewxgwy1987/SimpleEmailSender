@@ -1,28 +1,57 @@
 <?xml version="1.0"?>
 <EmailSenderConfig>
   <LogFileName>EmailSender.log</LogFileName>
-  
+
   <PathFileMSG>message.txt</PathFileMSG>
 
   <EmailConfig>
     <EmailFrom>ewxgwy1987@163.com</EmailFrom>
 
-    <EmailToList>
-      <EmailTo>wenyu.guo@pterisglobal.com</EmailTo>
-      <EmailTo>ewxgwy1987@gmail.com</EmailTo>
-      <EmailTo>ewxgwy198721@163.com</EmailTo>
-      <EmailTo>testewxgwy2@163.com</EmailTo>
+    <EmailToList group="APP">
+      <EmailTo>
+        <User>wenyu.guo</User>
+        <Email>wenyu.guo@pterisglobal.com</Email>
+      </EmailTo>
+      <EmailTo>
+        <User>ewxgwy1987</User>
+        <Email>ewxgwy1987@gmail.com</Email>
+      </EmailTo>
+	  <!--
+      <EmailTo>
+        <User>test</User>
+        <Email>ewxgwy198721@163.com</Email>
+      </EmailTo>
+	  -->
     </EmailToList>
 
-    <EmailSubject_Default>Test SVN Email</EmailSubject_Default>
+    <EmailToList group="MDS">
+	  <EmailTo>
+        <User>wenyu.guo</User>
+        <Email>wenyu.guo@pterisglobal.com</Email>
+      </EmailTo>
+      <EmailTo>
+        <User>gwy1987</User>
+        <Email>gwy1987@sina.com</Email>
+      </EmailTo>
+      <EmailTo>
+        <User>testewxgwy2</User>
+        <Email>testewxgwy2@163.com</Email>
+      </EmailTo>
+      <EmailTo>
+        <User>ewxgwy1987</User>
+        <Email>ewxgwy1987@hotmail.com</Email>
+      </EmailTo>
+    </EmailToList>
+
+    <EmailSubject_Default>New SVN Commit.</EmailSubject_Default>
   </EmailConfig>
 
   <SMTPServer>
-	<ServerName>smtp.163.com</ServerName>
+    <ServerName>smtp.163.com</ServerName>
     <ServerUser>ewxgwy1987</ServerUser>
     <ServerPassword>21-ewxgwy</ServerPassword>
     <EmailPort>25</EmailPort>
     <EnableSSL>False</EnableSSL>
   </SMTPServer>
-  
+
 </EmailSenderConfig>

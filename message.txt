@@ -1,1 +1,187 @@
-test email
+haha 
+Modified: branches/branch_solution/DockSample/Form1.cs
+===================================================================
+--- branches/branch_solution/DockSample/Form1.cs	2014-07-09 01:05:42 UTC (rev 19)
++++ branches/branch_solution/DockSample/Form1.cs	2014-07-09 02:29:15 UTC (rev 20)
+@@ -40,10 +40,10 @@
+ 
+ 
+ 
++                            //dkdkdkdkdk
+ 
+ 
+ 
+-
+                             ddddddddd
+ 
+ 
+
+test 
+2014-07-09 10:29:15 +0800 (Wed, 09 Jul 2014)
+branches/branch_solution/DockSample/
+REVISION   PATH
+--------   ----
+      20   /
+      19   /
+      18   /
+      17   /
+      16   /
+      15   /
+      14   /
+      13   /
+      12   /
+      11   /
+      10   /
+       9   /
+       8   /
+       7   /
+       6   /
+       5   /
+       4   /
+       3   /
+       2   /
+       1   /
+       0   /
+test 1111
+
+PGL_Admin
+2014-07-09 10:29:15 +0800 (Wed, 09 Jul 2014)
+11
+test 1111
+
+PGL_Admin
+2014-07-09 10:29:15 +0800 (Wed, 09 Jul 2014)
+11
+test 1111
+
+/
+ branches/
+  branch_solution/
+   2222.txt
+   DockSample/
+    DockSample.csproj
+    Form1.Designer.cs
+    Form1.cs
+    Form1.resx
+    Program.cs
+    Properties/
+     AssemblyInfo.cs
+     Resources.Designer.cs
+     Resources.resx
+     Settings.Designer.cs
+     Settings.settings
+    bin/
+     Debug/
+      DockSample.exe
+      DockSample.pdb
+      DockSample.vshost.exe
+      DockSample.vshost.exe.manifest
+    obj/
+     x86/
+      Debug/
+       DesignTimeResolveAssemblyReferences.cache
+       DesignTimeResolveAssemblyReferencesInput.cache
+       DockSample.Form1.resources
+       DockSample.Properties.Resources.resources
+       DockSample.csproj.FileListAbsolute.txt
+       DockSample.csproj.GenerateResource.Cache
+       DockSample.exe
+       DockSample.pdb
+       TempPE/
+   DockSample.sln
+   DockSample.suo
+   test.txt
+  test2_newbranches/
+   2222.txt
+   DockSample/
+    DockSample.csproj
+    Form1.Designer.cs
+    Form1.cs
+    Form1.resx
+    Program.cs
+    Properties/
+     AssemblyInfo.cs
+     Resources.Designer.cs
+     Resources.resx
+     Settings.Designer.cs
+     Settings.settings
+    bin/
+     Debug/
+      DockSample.exe
+      DockSample.pdb
+      DockSample.vshost.exe
+      DockSample.vshost.exe.manifest
+    obj/
+     x86/
+      Debug/
+       DesignTimeResolveAssemblyReferences.cache
+       DesignTimeResolveAssemblyReferencesInput.cache
+       DockSample.Form1.resources
+       DockSample.Properties.Resources.resources
+       DockSample.csproj.FileListAbsolute.txt
+       DockSample.csproj.GenerateResource.Cache
+       DockSample.exe
+       DockSample.pdb
+       TempPE/
+   DockSample.sln
+   DockSample.suo
+   test.txt
+ tags/
+ trunk/
+  2222.txt
+  DockSample/
+   DockSample.csproj
+   Form1.Designer.cs
+   Form1.cs
+   Form1.resx
+   Program.cs
+   Properties/
+    AssemblyInfo.cs
+    Resources.Designer.cs
+    Resources.resx
+    Settings.Designer.cs
+    Settings.settings
+   bin/
+    Debug/
+     DockSample.exe
+     DockSample.pdb
+     DockSample.vshost.exe
+     DockSample.vshost.exe.manifest
+   obj/
+    x86/
+     Debug/
+      DesignTimeResolveAssemblyReferences.cache
+      DesignTimeResolveAssemblyReferencesInput.cache
+      DockSample.Form1.resources
+      DockSample.Properties.Resources.resources
+      DockSample.csproj.FileListAbsolute.txt
+      DockSample.csproj.GenerateResource.Cache
+      DockSample.exe
+      DockSample.pdb
+      TempPE/
+  DockSample.sln
+  DockSample.suo
+  test.txt
+283101b3-917a-d540-9738-fec42b672b23
+21
+ Volume in drive D has no label.
+ Volume Serial Number is DA7D-E394
+
+ Directory of D:\Python Learning\Email_Python
+
+17-Jul-14  02:39 PM    <DIR>          .
+17-Jul-14  02:39 PM    <DIR>          ..
+17-Jul-14  02:39 PM                 7 a.txt
+14-Jul-14  12:27 AM                70 EmailAddresses.txt
+17-Jul-14  01:55 PM             1,332 EmailSender.py
+17-Jul-14  12:18 PM               774 EmailSenderConfig.xml
+17-Jul-14  01:45 PM             4,545 EmailXConfig.py
+17-Jul-14  12:44 PM             4,174 EmailXConfig.pyc
+17-Jul-14  11:00 AM               307 mailer
+16-Jul-14  11:08 AM    <DIR>          MailerSender_Net
+17-Jul-14  02:54 PM             3,574 message.txt
+16-Jul-14  10:58 AM               125 test.bat
+               9 File(s)         14,908 bytes
+               3 Dir(s)  18,072,186,880 bytes free
+"ddd" + "ddx" 
+ddd + ddx 

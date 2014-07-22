@@ -5,6 +5,6 @@
         <File name="EmailXConfig.py" />
         <File name="mailer" />
         <File name="message.txt" />
-        <File name="test.bat" />
+        <File name="post-commit.bat" />
     </Project>
 </NotepadPlus>

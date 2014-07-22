@@ -1,6 +1,6 @@
 <?xml version="1.0"?>
 <EmailSenderConfig>
-  <LogFileName>EmailSender.log</LogFileName>
+  <LogFileName>E:\PALS\log\SVN_EmailSender.log</LogFileName>
 
   <PathFileMSG>message.txt</PathFileMSG>
 
@@ -19,7 +19,7 @@
     </EmailToList>
 
     <EmailToList group="MDS">
-		<EmailTo>
+	  <EmailTo>
         <User>wenyu.guo</User>
         <Email>wenyu.guo@pterisglobal.com</Email>
       </EmailTo>

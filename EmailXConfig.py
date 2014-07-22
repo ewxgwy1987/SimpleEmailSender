@@ -51,17 +51,17 @@ class XConfig:
 		self.SMTPServerSSL = False
 		self.isAllConfigOK = False
 		
-		if platform.platform().startswith('Windows'):
-			logging_file = os.path.join(os.getenv('PALS_LOG'),self.LogFileName)
+		# if platform.platform().startswith('Windows'):
+			# logging_file = os.path.join(os.getenv('PALS_LOG'),self.LogFileName)
 	
-		logging.basicConfig(
-			level=logging.DEBUG,
-			format='%(asctime)s : %(levelname)s : %(message)s',
-			filename = logging_file,
-			filemode = 'a',
-		)
+		# logging.basicConfig(
+			# level=logging.DEBUG,
+			# format='%(asctime)s : %(levelname)s : %(message)s',
+			# filename = logging_file,
+			# filemode = 'a',
+		# )
 		
-		self.log = logging.getLogger()
+		# self.log = logging.getLogger()
 		
 	def GetConfig(self):
 		"""Get All configuration set from xml file"""
@@ -76,13 +76,13 @@ class XConfig:
 			# print "LogFileName:	" + self.LogFileName
 			
 			#Re-Initialize the logging
-			if platform.platform().startswith('Windows'):
-				logging_file = os.path.join(os.getenv('PALS_LOG'),self.LogFileName)
+			# if platform.platform().startswith('Windows'):
+				# logging_file = os.path.join(os.getenv('PALS_LOG'),self.LogFileName)
 	
 			logging.basicConfig(
 				level=logging.DEBUG,
 				format='%(asctime)s : %(levelname)s : %(message)s',
-				filename = logging_file,
+				filename = self.LogFileName,
 				filemode = 'a',
 			)
 			self.log = logging.getLogger()

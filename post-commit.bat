@@ -109,4 +109,4 @@ REM echo ***********************************************************************
 REM mailer.py commit "$REPOS" "$REV" /path/to/mailer.conf
 
 cd ./Email
-EmailSender.py %svn_author% %REPOS% %REV% .
+python EmailSender.py %svn_author% %REPOS% %REV% .

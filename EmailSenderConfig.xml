@@ -5,7 +5,7 @@
   <PathFileMSG>message.txt</PathFileMSG>
 
   <EmailConfig>
-    <EmailFrom>ewxgwy1987@163.com</EmailFrom>
+    <EmailFrom>wenyu.guo@pterisglobal.com</EmailFrom>
 
     <EmailToList group="APP">
       <EmailTo>
@@ -16,30 +16,20 @@
         <User>ewxgwy1987</User>
         <Email>ewxgwy1987@gmail.com</Email>
       </EmailTo>
-	  <!--
-      <EmailTo>
-        <User>test</User>
-        <Email>ewxgwy198721@163.com</Email>
-      </EmailTo>
-	  -->
     </EmailToList>
 
     <EmailToList group="MDS">
-	  <EmailTo>
+		<EmailTo>
         <User>wenyu.guo</User>
         <Email>wenyu.guo@pterisglobal.com</Email>
       </EmailTo>
-      <EmailTo>
-        <User>gwy1987</User>
-        <Email>gwy1987@sina.com</Email>
+	  <EmailTo>
+        <User>XiaoLong.Liu</User>
+        <Email>XiaoLong.Liu@pterisglobal.com</Email>
       </EmailTo>
       <EmailTo>
-        <User>testewxgwy2</User>
-        <Email>testewxgwy2@163.com</Email>
-      </EmailTo>
-      <EmailTo>
-        <User>ewxgwy1987</User>
-        <Email>ewxgwy1987@hotmail.com</Email>
+        <User>HanXiao.Fu</User>
+        <Email>HanXiao.Fu@pterisglobal.com</Email>
       </EmailTo>
     </EmailToList>
 
@@ -47,9 +37,9 @@
   </EmailConfig>
 
   <SMTPServer>
-    <ServerName>smtp.163.com</ServerName>
-    <ServerUser>ewxgwy1987</ServerUser>
-    <ServerPassword>21-ewxgwy</ServerPassword>
+    <ServerName>email.pterisglobal.com</ServerName>
+    <ServerUser>wenyu.guo</ServerUser>
+    <ServerPassword>21ewxgwy</ServerPassword>
     <EmailPort>25</EmailPort>
     <EnableSSL>False</EnableSSL>
   </SMTPServer>

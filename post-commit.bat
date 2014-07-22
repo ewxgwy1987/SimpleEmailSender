@@ -64,7 +64,7 @@ REM D:\SVN_TEST\data\repositories\test2\Email\message.txt
 set REPOS=%1
 set REV=%2
 set TXN_NAME=%3
-set OutputFile=%REPOS%\Email\message.txt
+set OutputFile=./Email/message.txt
 
 echo The SVN Post-Commit Email > %OutputFile%
 set <nul /p=Date:	>> %OutputFile% & date /t >> %OutputFile%
@@ -108,4 +108,5 @@ echo ***************************************************************************
 REM echo *********************************************************************************************************** >> %OutputFile%
 REM mailer.py commit "$REPOS" "$REV" /path/to/mailer.conf
 
-%REPOS%\Email\EmailSender.py %svn_author% %REPOS% %REV% %REPOS%\Email 1>&2
+cd ./Email
+EmailSender.py %svn_author% %REPOS% %REV% .

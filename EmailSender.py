@@ -63,40 +63,43 @@ if _xcfg.isAllConfigOK:
 		msg['Subject'] = EmailSubject
 		msg['From'] = _xcfg.EmailFrom
 		# msg['Cc'] = 'ewxgwy1987@163.com'
-		
-		sender = smtplib.SMTP(_xcfg.SMTPServerName)
-		# sender.set_debuglevel(1)
 
 		# If the author is in one Email Group, then send emails to all users in this group
-		delimiter = ', '
+		
+		EmailList = []
 		for group,  usr_list in _xcfg.EmailToList_UsrGroup.items():
 			if SVN_author in usr_list:
-				
 				if not UsrExists:
 					UsrExists = True
 				
-				EmailList = _xcfg.EmailToList_EmailGroup[group]
-				msg['To'] = delimiter.join(EmailList)
+				tmp_EmailList = _xcfg.EmailToList_EmailGroup[group]
+				for e in tmp_EmailList:
+					if e not in EmailList:
+						EmailList.append(e)
 				
-				try:
-					islogin = sender.login(_xcfg.SMTPServerUsr, _xcfg.SMTPServerPwd)
-					result = sender.sendmail(
-						_xcfg.EmailFrom, 
-						EmailList,
-						msg.as_string()
-					)
-					
-					_xcfg.log.info("Send Email({0}) to: {1}".format(EmailSubject, str(EmailList)))
-					if(len(result) > 0):
-						_xcfg.log.error(str(result))
-						
-				except Exception as exp:
-					_xcfg.log.error('Sending Email is failed. To: {}'.format(str(EmailList))) 
-					_xcfg.log.exception(str(exp)) 
-		
 		if not UsrExists:
 			_xcfg.log.error('Author {} cannot be found in any groups'.format(SVN_author)) 
-		sender.quit()
+		
+		delimiter = ', '
+		msg['To'] = delimiter.join(EmailList)
+		try:
+			sender = smtplib.SMTP(_xcfg.SMTPServerName)
+			# sender.set_debuglevel(1)
+			islogin = sender.login(_xcfg.SMTPServerUsr, _xcfg.SMTPServerPwd)
+			result = sender.sendmail(
+				_xcfg.EmailFrom, 
+				EmailList,
+				msg.as_string()
+			)
+			
+			_xcfg.log.info("Send Email({0}) to: {1}".format(EmailSubject, str(EmailList)))
+			if(len(result) > 0):
+				_xcfg.log.error(str(result))
+				
+			sender.quit()
+		except Exception as exp:
+			_xcfg.log.error('Sending Email is failed. To: {}'.format(str(EmailList))) 
+			_xcfg.log.exception(str(exp)) 
 
 	except Exception as exp:
 		_xcfg.log.exception(str(exp))

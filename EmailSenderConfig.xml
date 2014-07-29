@@ -5,6 +5,8 @@
   <PathFileMSG>message.txt</PathFileMSG>
 
   <EmailConfig>
+	<EmailEnable>True</EmailEnable>
+  
     <EmailFrom>wenyu.guo@pterisglobal.com</EmailFrom>
 
     <EmailToList group="APP">
@@ -19,10 +21,12 @@
     </EmailToList>
 
     <EmailToList group="MDS">
+	  <!--
 	  <EmailTo>
         <User>wenyu.guo</User>
         <Email>wenyu.guo@pterisglobal.com</Email>
       </EmailTo>
+	  -->
 	  <EmailTo>
         <User>XiaoLong.Liu</User>
         <Email>XiaoLong.Liu@pterisglobal.com</Email>

@@ -46,66 +46,69 @@ _xcfg= XConfig(RootPath)
 _xcfg.GetConfig()
 
 if _xcfg.isAllConfigOK:
-	try:
-		UsrExists = False
-		filepath = os.path.join(RootPath, _xcfg.PathFileMSG)
-		f_msg = open(filepath, 'rb')
-		msg = MIMEText(f_msg.read(),'plain','us-ascii')
-
-		EmailSubject = '{}(Author:{}, Repository:{}, Revision:{})'.format(	
-			_xcfg.DefaultEmailSubject,
-			SVN_author,
-			SVN_repos,
-			SVN_rev
-		)
-		_xcfg.log.debug('Email Subject: {}'.format(EmailSubject))
-		
-		msg['Subject'] = EmailSubject
-		msg['From'] = _xcfg.EmailFrom
-		# msg['Cc'] = 'ewxgwy1987@163.com'
-
-		# If the author is in one Email Group, then send emails to all users in this group
-		
-		EmailList = []
-		for group,  usr_list in _xcfg.EmailToList_UsrGroup.items():
-			if SVN_author in usr_list:
-				if not UsrExists:
-					UsrExists = True
-				
-				tmp_EmailList = _xcfg.EmailToList_EmailGroup[group]
-				for e in tmp_EmailList:
-					if e not in EmailList:
-						EmailList.append(e)
-				
-		if not UsrExists:
-			_xcfg.log.error('Author {} cannot be found in any groups'.format(SVN_author)) 
-		
-		delimiter = ', '
-		msg['To'] = delimiter.join(EmailList)
+	if _xcfg.EmailEnable:
 		try:
-			sender = smtplib.SMTP(_xcfg.SMTPServerName)
-			# sender.set_debuglevel(1)
-			islogin = sender.login(_xcfg.SMTPServerUsr, _xcfg.SMTPServerPwd)
-			result = sender.sendmail(
-				_xcfg.EmailFrom, 
-				EmailList,
-				msg.as_string()
-			)
-			
-			_xcfg.log.info("Send Email({0}) to: {1}".format(EmailSubject, str(EmailList)))
-			if(len(result) > 0):
-				_xcfg.log.error(str(result))
-				
-			sender.quit()
-		except Exception as exp:
-			_xcfg.log.error('Sending Email is failed. To: {}'.format(str(EmailList))) 
-			_xcfg.log.exception(str(exp)) 
+			UsrExists = False
+			filepath = os.path.join(RootPath, _xcfg.PathFileMSG)
+			f_msg = open(filepath, 'rb')
+			msg = MIMEText(f_msg.read(),'plain','us-ascii')
 
-	except Exception as exp:
-		_xcfg.log.exception(str(exp))
-	finally:
-		if f_msg:
-			f_msg.close()
+			EmailSubject = '{}(Author:{}, Repository:{}, Revision:{})'.format(	
+				_xcfg.DefaultEmailSubject,
+				SVN_author,
+				SVN_repos,
+				SVN_rev
+			)
+			_xcfg.log.debug('Email Subject: {}'.format(EmailSubject))
+			
+			msg['Subject'] = EmailSubject
+			msg['From'] = _xcfg.EmailFrom
+			# msg['Cc'] = 'ewxgwy1987@163.com'
+
+			# If the author is in one Email Group, then send emails to all users in this group
+			
+			EmailList = []
+			for group,  usr_list in _xcfg.EmailToList_UsrGroup.items():
+				if SVN_author in usr_list:
+					if not UsrExists:
+						UsrExists = True
+					
+					tmp_EmailList = _xcfg.EmailToList_EmailGroup[group]
+					for e in tmp_EmailList:
+						if e not in EmailList:
+							EmailList.append(e)
+					
+			if not UsrExists:
+				_xcfg.log.error('Author {} cannot be found in any groups'.format(SVN_author)) 
+			
+			delimiter = ', '
+			msg['To'] = delimiter.join(EmailList)
+			try:
+				sender = smtplib.SMTP(_xcfg.SMTPServerName)
+				# sender.set_debuglevel(1)
+				islogin = sender.login(_xcfg.SMTPServerUsr, _xcfg.SMTPServerPwd)
+				result = sender.sendmail(
+					_xcfg.EmailFrom, 
+					EmailList,
+					msg.as_string()
+				)
+				
+				_xcfg.log.info("Send Email({0}) to: {1}".format(EmailSubject, str(EmailList)))
+				if(len(result) > 0):
+					_xcfg.log.error(str(result))
+					
+				sender.quit()
+			except Exception as exp:
+				_xcfg.log.error('Sending Email is failed. To: {}'.format(str(EmailList))) 
+				_xcfg.log.exception(str(exp)) 
+
+		except Exception as exp:
+			_xcfg.log.exception(str(exp))
+		finally:
+			if f_msg:
+				f_msg.close()
+	else:
+		_xcfg.log.info("Email function is disabled, no email has been sent.")
 		
 # if __name__=='__main__':
 	# raw_input("Press any key to continue")

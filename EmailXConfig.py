@@ -18,6 +18,7 @@ class XConfig:
 	_xelem1_PathFileMSG = 'PathFileMSG' 
 	
 	_xelem1_EmailConfig = 'EmailConfig'
+	_xelem2_EmailEnable = 'EmailEnable'
 	_xelem2_EmailFrom = 'EmailFrom' 
 	_xelem2_EmailToList = 'EmailToList'
 	_xelem3_EmailTo = 'EmailTo'
@@ -40,6 +41,7 @@ class XConfig:
 		
 		self.LogFileName = 'EmailSender.log' # default value
 		self.PathFileMSG = ''
+		self.EmailEnable = False
 		self.EmailFrom = ''
 		self.EmailToList_UsrGroup= {} #dictionary
 		self.EmailToList_EmailGroup= {} #dictionary
@@ -91,6 +93,14 @@ class XConfig:
 			xpath = "./{}".format(XConfig._xelem1_PathFileMSG)
 			self.PathFileMSG = xroot.findall(xpath)[0].text
 			# print "PathFileMSG:	" + self.PathFileMSG
+			
+			#Get EmailEnable
+			xpath = "./{}/{}".format(XConfig._xelem1_EmailConfig, XConfig._xelem2_EmailEnable)
+			if xroot.findall(xpath)[0].text.lower() == 'true':
+				self.EmailEnable = True
+			else:
+				self.EmailEnable = False
+			print "EmailEnable:	" + str(self.EmailEnable)
 			
 			#Get EmailFrom
 			xpath = "./{}/{}".format(XConfig._xelem1_EmailConfig, XConfig._xelem2_EmailFrom)
@@ -149,8 +159,11 @@ class XConfig:
 			
 			#Get SMTPServerSSL 
 			xpath = "./{}/{}".format(XConfig._xelem1_SMTPServer, XConfig._xelem2_SMTPServerSSL)
-			self.SMTPServerSSL = xroot.findall(xpath)[0].text
-			# print "SMTPServerSSL:	" + self.SMTPServerSSL
+			if xroot.findall(xpath)[0].text.lower() == 'true':
+				self.SMTPServerSSL = True
+			else:
+				self.SMTPServerSSL = False
+			print "SMTPServerSSL:	" + str(self.SMTPServerSSL)
 			
 			self.isAllConfigOK = True
 			
@@ -160,7 +173,7 @@ class XConfig:
 			self.isAllConfigOK = False
 		
 if __name__=='__main__':
-	rootpath = "D:\\SVN_TEST\\data\\repositories\\test2\\Email"
+	rootpath = ".\\"
 	myconfig = XConfig(rootpath)
 	myconfig.GetConfig()
 	raw_input("Press any key to continue")
